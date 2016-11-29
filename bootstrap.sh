@@ -58,6 +58,7 @@ else
 fi
 
 fancy_echo "Changing to repo dir ..."
+[ ! -d ~/Development/  ] && mkdir ~/Development/
 cd ~/Development/
 
 # Clone the repository to your local drive.
