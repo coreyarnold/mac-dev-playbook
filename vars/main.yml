@@ -3,7 +3,7 @@ downloads: ~/.ansible-downloads/
 
 configure_sudoers: yes
 
-dotfiles_repo: https://github.com/geerlingguy/dotfiles.git
+dotfiles_repo: https://github.com/coreyarnold/dotfiles.git
 dotfiles_repo_accept_hostkey: yes
 dotfiles_repo_local_destination: ~/Dropbox/Development/GitHub/dotfiles
 dotfiles_files:
@@ -61,19 +61,19 @@ homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
   - docker
   - dropbox
-  - fing
-  - firefox
+#  - fing
+#  - firefox
   - google-chrome
   - handbrake
   - kdiff3
-  - licecap
-  - limechat
-  - macvim
+#  - licecap
+#  - limechat
+#  - macvim
   - yujitach-menumeters # Note: Using forked version for 10.11+ support
   - nvalt
   - sequel-pro
-  - skype
-  - skitch
+#  - skype
+#  - skitch
   - slack
   - sublime-text
   - transmit

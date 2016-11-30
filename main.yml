@@ -8,7 +8,6 @@
   roles:
     - geerlingguy.homebrew
     - geerlingguy.dotfiles
-#      dotfiles_repo: "https://github.com/coreyarnold/dotfiles.git"
 
   tasks:
     - include: tasks/ansible-setup.yml
