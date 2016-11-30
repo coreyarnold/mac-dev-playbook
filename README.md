@@ -22,7 +22,13 @@ This is a work in progress, and is mostly a means for me to document my current 
 
 > Note: If some Homebrew commands fail, you might need to agree to XCode's license or fix some other Brew issue. Run `brew doctor` to see if this is the case.
 
-## Included Applications / Configuration
+## Overriding Defaults
+
+Not everyone's development environment and preferred software configuration is the same.
+
+You can override any of the defaults configured in `default.config.yml` by creating a `config.yml` file and setting the overrides in that file (e.g. create a customized list of `homebrew_installed_packages`).
+
+## Included Applications / Configuration (Default)
 
 Applications (installed with Homebrew Cask):
 
@@ -97,7 +103,7 @@ It's my hope that I can get the rest of these things wrapped up into Ansible pla
   2. Install [Sublime Package Manager](http://sublime.wbond.net/installation).
   3. Install all the Mac App Store Apps (see below).
   4. Install all the apps that aren't yet in this setup (see below).
-  5. Remap Caps Lock to Escape (keycode 53), using Karabiner Elements.
+  5. Remap Caps Lock to Escape (requires macOS Sierra 10.12.1+).
   6. Set trackpad tracking rate.
   7. Set mouse tracking rate.
   8. Configure extra Mail and/or Calendar accounts (e.g. Google, Exchange, etc.).
@@ -106,9 +112,8 @@ It's my hope that I can get the rest of these things wrapped up into Ansible pla
 
 These are mostly direct download links, some are more difficult to install because of custom installers or other nonstandard install quirks:
 
-  - [iShowU HD](http://downloads.shinywhitebox.com/iShowU_HD_Pro_2.3.7.dmg)
+  - [iShowU HD](http://www.shinywhitebox.com/downloads/iShowU_HD_2.3.20.dmg)
   - [Adobe Creative Cloud](http://www.adobe.com/creativecloud.html)
-  - [Microsoft Office](https://products.office.com/en-us/mac/microsoft-office-for-mac)
 
 ### Configuration to be added:
 
@@ -142,9 +147,11 @@ I also use the following apps at least once or twice per week, but the Mac App S
 
 Many people have asked me if I often wipe my entire workstation and start from scratch just to test changes to the playbook. Nope! Instead, I posted instructions for how I build a [Mac OS X VirtualBox VM](https://github.com/geerlingguy/mac-osx-virtualbox-vm), on which I can continually run and re-run this playbook to test changes and make sure things work correctly.
 
+Additionally, this project is [continuously tested on Travis CI's macOS infrastructure](https://travis-ci.org/geerlingguy/mac-dev-playbook).
+
 ## Ansible for DevOps
 
-Check out [Ansible for DevOps](https://www.ansiblefordevops.com/), which will teach you how to do some other amazing things with Ansible.
+Check out [Ansible for DevOps](https://www.ansiblefordevops.com/), which teaches you how to automate almost anything with Ansible.
 
 ## Author
 
