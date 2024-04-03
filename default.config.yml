@@ -1,14 +1,34 @@
 ---
 downloads: ~/.ansible-downloads/
 
-configure_sudoers: yes
+configure_dotfiles: true
+configure_terminal: true
+configure_osx: true
+
+# Set to 'true' to configure the Dock via dockutil.
+configure_dock: false
+dockitems_remove: []
+# - Launchpad
+# - TV
+# - Podcasts
+# - 'App Store'
+dockitems_persist: []
+# - name: "Sublime Text"
+#   path: "/Applications/Sublime Text.app/"
+#   pos: 5
+
+configure_sudoers: false
+sudoers_custom_config: ''
+# Example:
+# sudoers_custom_config: |
+#   # Allow users in admin group to use sudo with no password.
+#   %admin ALL=(ALL) NOPASSWD: ALL
 
 dotfiles_repo: https://github.com/coreyarnold/dotfiles.git
-dotfiles_repo_accept_hostkey: yes
+dotfiles_repo_accept_hostkey: true
 dotfiles_repo_local_destination: ~/Dropbox/Development/GitHub/dotfiles
 dotfiles_files:
-  - .bash_profile
-  - .gitconfig
+  - .zshrc
   - .gitignore
   - .inputrc
   - .osx
@@ -20,63 +40,88 @@ homebrew_installed_packages:
   - bash-completion
   - doxygen
   - gettext
+  - gifsicle
   - git
+  - gh
   - go
   - gpg
-  - hub
   - httpie
   - iperf
-  - libdvdcss
   - libevent
-  - packer
-  - python
   - sqlite
-  - mcrypt
-  - mysql
   - nmap
-  - npm
+  - node
   - nvm
-  - php70
-  - php70-mcrypt
-  - php70-xdebug
+  - php
   - ssh-copy-id
   - cowsay
   - readline
-  - subversion
   - openssl
   - pv
-  - drush
   - wget
   - wrk
+  - zsh-history-substring-search
 
-homebrew_taps:
-  - homebrew/core
-  - caskroom/cask
-  - homebrew/binary
-  - homebrew/dupes
-  - homebrew/php
-  - homebrew/versions
+homebrew_taps: []
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
+  - chromedriver
   - docker
   - dropbox
-#  - fing
-#  - firefox
+  - firefox
   - google-chrome
   - handbrake
-  - kdiff3
-#  - licecap
-#  - limechat
-#  - macvim
-  - yujitach-menumeters # Note: Using forked version for 10.11+ support
-  - nvalt
-  - sequel-pro
-#  - skype
-#  - skitch
+  - licecap
+  - sequel-ace
   - slack
   - sublime-text
   - transmit
-  - vagrant
-  - virtualbox
-  - vlc
+
+# See `geerlingguy.mas` role documentation for usage instructions.
+mas_installed_apps: []
+mas_email: ""
+mas_password: ""
+
+osx_script: "~/.osx --no-restart"
+
+# Install packages from other package managers.
+# Note: You are responsible for making sure the required package managers are
+# installed, eg. through homebrew.
+composer_packages: []
+# - name: drush
+#   state: present # present/absent, default: present
+#   version: "^8.1" # default: N/A
+gem_packages: []
+# - name: bundler
+#   state: present # present/absent/latest, default: present
+#   version: "~> 1.15.1" # default: N/A
+npm_packages: []
+# - name: webpack
+#   state: present # present/absent/latest, default: present
+#   version: "^2.6" # default: N/A
+pip_packages: []
+# - name: mkdocs
+#   state: present # present/absent/latest, default: present
+#   version: "0.16.3" # default: N/A
+
+# Set to 'true' to configure Sublime Text.
+configure_sublime: false
+sublime_base_path: '~/Library/Application Support/Sublime Text'
+sublime_config_path: "Packages/User"
+sublime_package_control:
+  - "DocBlockr"
+  - "Dockerfile Syntax Highlighting"
+  - "FileDiffs"
+  - "GitHub Flavored Markdown Preview"
+  - "Jinja2"
+  - "Package Control"
+  - "PHP-Twig"
+  - "Pretty JSON"
+  - "SublimeLinter"
+  - "SublimeLinter-contrib-yamllint"
+  - "TrailingSpaces"
+  - "WordCount"
+
+# Glob pattern to ansible task files to run after all other tasks are finished.
+post_provision_tasks: []
